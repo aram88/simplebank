@@ -3,6 +3,7 @@
 //   sqlc v1.29.0
 // source: entity.sql
 
+
 package simplebank
 
 import (
