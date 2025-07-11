@@ -1,0 +1,26 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Coverage files
+*.cover
+
+# Dependency directory
+vendor/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
