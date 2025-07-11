@@ -3,8 +3,7 @@
 //   sqlc v1.29.0
 // source: entity.sql
 
-
-package simplebank
+package db
 
 import (
 	"context"
