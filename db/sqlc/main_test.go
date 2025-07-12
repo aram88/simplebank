@@ -25,6 +25,5 @@ func TestMain(m *testing.M) {
 
 	testQueries = New(testDB)
 
-	log.Print(8888888)
 	os.Exit(m.Run())
 }
