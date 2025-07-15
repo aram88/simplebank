@@ -10,8 +10,8 @@ import (
 
 // Store provides all fuctions to exequte db queries and transactions
 type Store struct {
-	*Queries
 	db *pgxpool.Pool
+	*Queries
 }
 
 // NewStore create a new Store
