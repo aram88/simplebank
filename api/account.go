@@ -6,6 +6,7 @@ import (
 	db "github.com/aram88/simplebank/db/sqlc"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgconn"
 )
 
 type createAccountRequest struct {
@@ -28,6 +29,10 @@ func (server *Server) createAccount(ctx *gin.Context) {
 
 	account, err := server.store.CreateAccount(ctx, arg)
 	if err != nil {
+		if _, ok := err.(*pgconn.PgError); ok {
+			ctx.JSON(http.StatusForbidden, errorResponce(err))
+			return
+		}
 		ctx.JSON(http.StatusInternalServerError, errorResponce(err))
 		return
 	}
